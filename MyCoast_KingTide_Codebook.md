@@ -1,4 +1,22 @@
 # Codebook: MyCoast King Tide Report Export
+## Dataset Overview
+
+**Dataset Title:** MyCoast: Rhode Island – Citizen-Reported Flooding Observations
+**Source Portal:** [https://mycoast.org/ri](https://mycoast.org/ri) 
+**Geographic Scope:** State of Rhode Island, USA (primary focus: Providence and coastal/riverine communities) 
+**Time:** 2014 (platform launch) – present
+**Data Type:** Crowdsourced observational data (photos + data) 
+**Primary Flood Source Category:** Coastal tidal flooding, storm surge, king tides, and river flooding 
+
+### Description
+Developed by the **University of Rhode Island (URI) Coastal Resources Center (CRC)** and **Rhode Island Sea Grant**, this platform allows the public to submit georeferenced photographs of flooding and coastal change. The system automatically appends contextual metadata, such as tidal height from NOAA gauges and local weather data, to each report.
+
+### Reporting Modules
+1.  **King Tides:** Documents extreme high tidal events.
+2.  **Storm Report:** Captures flooding and damage from coastal storms and nor'easters.
+3.  **CoastSnap:** Records shoreline change from fixed camera stations.
+
+---
 **File:** `MyCoast_export_2026-03-26__1_.csv`  
 **Records:** 153 rows  
 **Columns:** 27  
@@ -6,7 +24,6 @@
 **Date range:** Photo dates from 2008-12-12 to 2025-12-06; records created in the system from 2015-08-28 to 2025-12-06.
 
 ---
-
 ## Report Identification
 
 ### `ID #`
