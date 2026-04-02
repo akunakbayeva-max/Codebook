@@ -2,47 +2,47 @@
 
 **Date:** April 2, 2026  
 **Version:** 1.0  
-[cite_start]**Citation:** Penn Libraries Data Management Documentation Standards [cite: 3, 4]
+**Citation:** Penn Libraries Data Management Documentation Standards
 
 ---
 
 ## 1. Dataset Overview
 
-* [cite_start]**Dataset Title:** MyCoast: Rhode Island – Citizen-Reported Flooding Observations [cite: 6]
-* [cite_start]**Source Portal:** [https://mycoast.org/ri](https://mycoast.org/ri) [cite: 7]
-* [cite_start]**Geographic Scope:** State of Rhode Island, USA (primary focus: Providence and coastal/riverine communities) [cite: 8]
-* [cite_start]**Time:** 2014 (platform launch) – present [cite: 9]
-* [cite_start]**Data Type:** Crowdsourced observational data (photos + data) [cite: 10]
-* [cite_start]**Primary Flood Source Category:** Coastal tidal flooding, storm surge, king tides, and river flooding [cite: 11]
+**Dataset Title:** MyCoast: Rhode Island – Citizen-Reported Flooding Observations
+**Source Portal:** [https://mycoast.org/ri](https://mycoast.org/ri) 
+**Geographic Scope:** State of Rhode Island, USA (primary focus: Providence and coastal/riverine communities) 
+**Time:** 2014 (platform launch) – present
+**Data Type:** Crowdsourced observational data (photos + data) 
+**Primary Flood Source Category:** Coastal tidal flooding, storm surge, king tides, and river flooding 
 
 ### Description
-[cite_start]Developed by the **University of Rhode Island (URI) Coastal Resources Center (CRC)** and **Rhode Island Sea Grant**, this platform allows the public to submit georeferenced photographs of flooding and coastal change[cite: 12, 13]. [cite_start]The system automatically appends contextual metadata, such as tidal height from NOAA gauges and local weather data, to each report[cite: 14].
+Developed by the **University of Rhode Island (URI) Coastal Resources Center (CRC)** and **Rhode Island Sea Grant**, this platform allows the public to submit georeferenced photographs of flooding and coastal change. The system automatically appends contextual metadata, such as tidal height from NOAA gauges and local weather data, to each report.
 
 ### Reporting Modules
-1.  [cite_start]**King Tides:** Documents extreme high tidal events[cite: 17].
-2.  [cite_start]**Storm Report:** Captures flooding and damage from coastal storms and nor'easters[cite: 18].
-3.  [cite_start]**CoastSnap:** Records shoreline change from fixed camera stations[cite: 19].
+1.  **King Tides:** Documents extreme high tidal events.
+2.  **Storm Report:** Captures flooding and damage from coastal storms and nor'easters.
+3.  **CoastSnap:** Records shoreline change from fixed camera stations.
 
 ---
 
 ## 2. Source & Access Information
 
-* [cite_start]**Data Producer:** URI Coastal Resources Center / Rhode Island Sea Grant [cite: 21]
-* [cite_start]**Platform Partners:** RI Coastal Resources Management Council (CRMC), RI Department of Transportation (RIDOT), Save the Bay, and Woonasquatucket River Watershed Council (WRWC) [cite: 22, 23]
-* **Funding:** Originally via NOAA/Northeast Ocean Council; [cite_start]$200,000 appropriated by RI in FY2026 for continued operations [cite: 24, 25]
-* [cite_start]**Access Method:** Public web portal, mobile apps (iOS/Android), and a searchable database [cite: 26]
-* [cite_start]**Data License:** Reports are publicly visible; contact URI Sea Grant for large-scale downloads [cite: 27]
-* **Citation Format:** MyCoast: Rhode Island [dataset]. University of Rhode Island Coastal Resources Center / Rhode Island Sea Grant. [https://mycoast.org/ri](https://mycoast.org/ri). [cite_start]Accessed [date]. [cite: 29, 30]
+**Data Producer:** URI Coastal Resources Center / Rhode Island Sea Grant 
+**Platform Partners:** RI Coastal Resources Management Council (CRMC), RI Department of Transportation (RIDOT), Save the Bay, and Woonasquatucket River Watershed Council (WRWC)
+ **Funding:** Originally via NOAA/Northeast Ocean Council; $200,000 appropriated by RI in FY2026 for continued operations 
+**Access Method:** Public web portal, mobile apps (iOS/Android), and a searchable database 
+**Data License:** Reports are publicly visible; contact URI Sea Grant for large-scale downloads
+**Citation Format:** MyCoast: Rhode Island [dataset]. University of Rhode Island Coastal Resources Center / Rhode Island Sea Grant. [https://mycoast.org/ri](https://mycoast.org/ri). 
 
 ---
 
 ## 3. Variable Descriptions
 
-[cite_start]All coordinates are in **decimal degrees (WGS84)** and dates/times follow **ISO 8601** standards[cite: 33, 34].
+All coordinates are in **decimal degrees (WGS84)** and dates/times follow **ISO 8601** standards.
 
 | Variable Name | Variable Label | Type | Values / Range | Missing Codes | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **report_id** | Report Identifier | String | Unique alphanumeric ID | -9 | [cite_start]Primary key [cite: 36] |
+| **report_id** | Report Identifier | String | Unique alphanumeric ID | -9 | Primary key  |
 | **report_type** | Type of Report | Categorical | 1=King Tides, 2=Storm, 3=CoastSnap | -9 | [cite_start]Distinguishes report source [cite: 36] |
 | **submission_date** | Date of Submission | Date | YYYY-MM-DD | -9 | [cite_start]Date submitted to platform [cite: 36] |
 | **observation_date**| Date of Observation | Date | YYYY-MM-DD | -9 | [cite_start]Sourced from photo EXIF [cite: 36] |
