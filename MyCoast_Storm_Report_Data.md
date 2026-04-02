@@ -43,21 +43,21 @@ All coordinates are in **decimal degrees (WGS84)** and dates/times follow **ISO 
 | Variable Name | Variable Label | Type | Values / Range | Missing Codes | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **report_id** | Report Identifier | String | Unique alphanumeric ID | -9 | Primary key  |
-| **report_type** | Type of Report | Categorical | 1=King Tides, 2=Storm, 3=CoastSnap | -9 | [cite_start]Distinguishes report source [cite: 36] |
-| **submission_date** | Date of Submission | Date | YYYY-MM-DD | -9 | [cite_start]Date submitted to platform [cite: 36] |
-| **observation_date**| Date of Observation | Date | YYYY-MM-DD | -9 | [cite_start]Sourced from photo EXIF [cite: 36] |
-| **latitude** | Latitude (WGS84) | Continuous | ~41.1°N – 42.0°N | -999 | [cite_start]Auto-populated or manual [cite: 36] |
-| **longitude** | Longitude (WGS84) | Continuous | ~-71.9°E – -71.1°E | -999 | [cite_start]Negative = West [cite: 36] |
-| **city_town** | Municipality | String | RI municipality name | Blank | [cite_start]Derived from coordinates [cite: 36] |
-| **county** | County | Categorical | 1=Providence, 2=Washington, 3=Kent, 4=Newport, 5=Bristol | -9 | [cite_start]RI County [cite: 36] |
-| **coastal_inland** | Coastal/Inland | Categorical | 1=Coastal, 2=Inland, 3=Both | -9 | [cite_start]Proximity to water source [cite: 36] |
-| **tide_height_ft** | Tide Height (ft) | Continuous | Numeric (ft above MLLW) | -9 | [cite_start]Nearest NOAA station data [cite: 36] |
-| **tide_type** | Tidal Classification| Categorical | 1=King Tide, 2=High, 3=Low, 4=Storm Surge, 5=Other | -9 | [cite_start]Thresholds set by RI Sea Grant [cite: 36] |
-| **weather_condition**| Weather Condition | Categorical | 1=Clear, 2=Cloudy, 3=Rain, 4=Heavy Rain, 5=Snow, 6=Fog, 9=Other | -9 | [cite_start]Auto-fetched or reported [cite: 36] |
-| **flooding_observed**| Flooding Observed | Binary | 1=Yes, 0=No | -9 | [cite_start]Presence of water in photo [cite: 36] |
-| **flood_severity** | Flood Severity | Ordinal | 1=Minor, 2=Moderate, 3=Severe, 4=Extreme, 9=Unknown | -9 | [cite_start]Qualitative estimate [cite: 36] |
-| **infrastructure_affected** | Assets Affected | Categorical | 0=None, 1=Road, 2=Parking, 3=Resid., 4=Comm., 5=Park, 6=Utility, 7=Seawall, 8=Other | -9 | [cite_start]Multi-value possible [cite: 36] |
-| **stormtools_linked**| STORMTOOLS Linked | Binary | 1=Yes, 0=No | -9 | [cite_start]Cross-validated with model [cite: 36] |
+| **report_type** | Type of Report | Categorical | 1=King Tides, 2=Storm, 3=CoastSnap | -9 | Distinguishes report source  |
+| **submission_date** | Date of Submission | Date | YYYY-MM-DD | -9 | Date submitted to platform |
+| **observation_date**| Date of Observation | Date | YYYY-MM-DD | -9 | Sourced from photo EXIF  |
+| **latitude** | Latitude (WGS84) | Continuous | ~41.1°N – 42.0°N | -999 | Auto-populated or manual  |
+| **longitude** | Longitude (WGS84) | Continuous | ~-71.9°E – -71.1°E | -999 | ]Negative = West  |
+| **city_town** | Municipality | String | RI municipality name | Blank | Derived from coordinates |
+| **county** | County | Categorical | 1=Providence, 2=Washington, 3=Kent, 4=Newport, 5=Bristol | -9 | RI County  |
+| **coastal_inland** | Coastal/Inland | Categorical | 1=Coastal, 2=Inland, 3=Both | -9 | Proximity to water source  |
+| **tide_height_ft** | Tide Height (ft) | Continuous | Numeric (ft above MLLW) | -9 | Nearest NOAA station data  |
+| **tide_type** | Tidal Classification| Categorical | 1=King Tide, 2=High, 3=Low, 4=Storm Surge, 5=Other | -9 | Thresholds set by RI Sea Grant  |
+| **weather_condition**| Weather Condition | Categorical | 1=Clear, 2=Cloudy, 3=Rain, 4=Heavy Rain, 5=Snow, 6=Fog, 9=Other | -9 |Auto-fetched or reported  |
+| **flooding_observed**| Flooding Observed | Binary | 1=Yes, 0=No | -9 |Presence of water in photo |
+| **flood_severity** | Flood Severity | Ordinal | 1=Minor, 2=Moderate, 3=Severe, 4=Extreme, 9=Unknown | -9 | Qualitative estimate  |
+| **infrastructure_affected** | Assets Affected | Categorical | 0=None, 1=Road, 2=Parking, 3=Resid., 4=Comm., 5=Park, 6=Utility, 7=Seawall, 8=Other | -9 | Multi-value possible |
+| **stormtools_linked**| STORMTOOLS Linked | Binary | 1=Yes, 0=No | -9 |]Cross-validated with model  |
 
 ---
 
@@ -65,33 +65,32 @@ All coordinates are in **decimal degrees (WGS84)** and dates/times follow **ISO 
 
 | Code | Label | Applies To |
 | :--- | :--- | :--- |
-| **-9** | Not recorded / Not available | [cite_start]All numeric and categorical variables [cite: 40] |
-| **-999** | Not recorded (coordinates) | [cite_start]Latitude and Longitude [cite: 40] |
-| **Blank** | Not provided | [cite_start]String and free-text fields [cite: 40] |
-| **0** | No / Not observed | [cite_start]Binary variables (e.g., flooding_observed) [cite: 40] |
+| **-9** | Not recorded / Not available | All numeric and categorical variables  |
+| **-999** | Not recorded (coordinates) | Latitude and Longitude  |
+| **Blank** | Not provided | String and free-text fields  |
+| **0** | No / Not observed | Binary variables (e.g., flooding_observed)  |
 
 ---
 
 ## 5. Data Notes & Limitations
 
-* **Volunteer Accuracy:** Data quality depends on the submitter and should be treated as observational, not metrological[cite: 43, 44].
-* [cite_start]**Metadata Retrieval:** Tidal and weather data are auto-fetched from the nearest station; mismatches may occur for inland reports[cite: 45, 46].
-* [cite_start]**Qualitative Severity:** The `flood_severity` field is an estimate, not a measured water depth[cite: 47].
-* [cite_start]**CoastSnap:** These reports track shoreline change over time and should be flagged when used in flood-only datasets[cite: 50, 51].
-* **Inland Coverage:** Prior to 2022, reports are predominantly coastal; inland reporting has expanded recently[cite: 52, 53].
-
+* **Volunteer Accuracy:** Data quality depends on the submitter and should be treated as observational, not metrological.
+* **Metadata Retrieval:** Tidal and weather data are auto-fetched from the nearest station; mismatches may occur for inland reports.
+* **Qualitative Severity:** The `flood_severity` field is an estimate, not a measured water depth.
+* **CoastSnap:** These reports track shoreline change over time and should be flagged when used in flood-only datasets.
+* **Inland Coverage:** Prior to 2022, reports are predominantly coastal; inland reporting has expanded recently.
 ---
 
 ## 6. Relationship to Other RI Flood Tools
 
-MyCoast RI data complements two other URI-developed tools[cite: 57]:
+MyCoast RI data complements two other URI-developed tools:
 
-* **STORMTOOLS:** Provides modeled flood predictions. [cite_start]MyCoast photos serve as "ground truth" to validate these models[cite: 58, 59].
-* **RI-CHAMP:** A decision-support tool for infrastructure damage. [cite_start]MyCoast reports on `infrastructure_affected` provide validation for CHAMP scenarios[cite: 61, 62].
+* **STORMTOOLS:** Provides modeled flood predictions. MyCoast photos serve as "ground truth" to validate these models].
+* **RI-CHAMP:** A decision-support tool for infrastructure damage. MyCoast reports on `infrastructure_affected` provide validation for CHAMP scenarios.
 
 ---
 
 ## 7. Documentation Reference
 
-[cite_start]Prepared following the **Penn Libraries Data Management Resources** for Codebooks & Data Dictionaries[cite: 66, 67].
-* **Standards Used:** ISO 8601 for dates/times; enumerated missing data codes; versioned for reproducibility[cite: 70, 71, 73].
+Prepared following the **Penn Libraries Data Management Resources** for Codebooks & Data Dictionaries.
+* **Standards Used:** ISO 8601 for dates/times; enumerated missing data codes; versioned for reproducibility.
