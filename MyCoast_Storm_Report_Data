@@ -1,0 +1,97 @@
+# MyCoast:MyCoast Flooding Data Source Codebook
+
+**Date:** April 2, 2026  
+**Version:** 1.0  
+[cite_start]**Citation:** Penn Libraries Data Management Documentation Standards [cite: 3, 4]
+
+---
+
+## 1. Dataset Overview
+
+* [cite_start]**Dataset Title:** MyCoast: Rhode Island – Citizen-Reported Flooding Observations [cite: 6]
+* [cite_start]**Source Portal:** [https://mycoast.org/ri](https://mycoast.org/ri) [cite: 7]
+* [cite_start]**Geographic Scope:** State of Rhode Island, USA (primary focus: Providence and coastal/riverine communities) [cite: 8]
+* [cite_start]**Time:** 2014 (platform launch) – present [cite: 9]
+* [cite_start]**Data Type:** Crowdsourced observational data (photos + data) [cite: 10]
+* [cite_start]**Primary Flood Source Category:** Coastal tidal flooding, storm surge, king tides, and river flooding [cite: 11]
+
+### Description
+[cite_start]Developed by the **University of Rhode Island (URI) Coastal Resources Center (CRC)** and **Rhode Island Sea Grant**, this platform allows the public to submit georeferenced photographs of flooding and coastal change[cite: 12, 13]. [cite_start]The system automatically appends contextual metadata, such as tidal height from NOAA gauges and local weather data, to each report[cite: 14].
+
+### Reporting Modules
+1.  [cite_start]**King Tides:** Documents extreme high tidal events[cite: 17].
+2.  [cite_start]**Storm Report:** Captures flooding and damage from coastal storms and nor'easters[cite: 18].
+3.  [cite_start]**CoastSnap:** Records shoreline change from fixed camera stations[cite: 19].
+
+---
+
+## 2. Source & Access Information
+
+* [cite_start]**Data Producer:** URI Coastal Resources Center / Rhode Island Sea Grant [cite: 21]
+* [cite_start]**Platform Partners:** RI Coastal Resources Management Council (CRMC), RI Department of Transportation (RIDOT), Save the Bay, and Woonasquatucket River Watershed Council (WRWC) [cite: 22, 23]
+* **Funding:** Originally via NOAA/Northeast Ocean Council; [cite_start]$200,000 appropriated by RI in FY2026 for continued operations [cite: 24, 25]
+* [cite_start]**Access Method:** Public web portal, mobile apps (iOS/Android), and a searchable database [cite: 26]
+* [cite_start]**Data License:** Reports are publicly visible; contact URI Sea Grant for large-scale downloads [cite: 27]
+* **Citation Format:** MyCoast: Rhode Island [dataset]. University of Rhode Island Coastal Resources Center / Rhode Island Sea Grant. [https://mycoast.org/ri](https://mycoast.org/ri). [cite_start]Accessed [date]. [cite: 29, 30]
+
+---
+
+## 3. Variable Descriptions
+
+[cite_start]All coordinates are in **decimal degrees (WGS84)** and dates/times follow **ISO 8601** standards[cite: 33, 34].
+
+| Variable Name | Variable Label | Type | Values / Range | Missing Codes | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **report_id** | Report Identifier | String | Unique alphanumeric ID | -9 | [cite_start]Primary key [cite: 36] |
+| **report_type** | Type of Report | Categorical | 1=King Tides, 2=Storm, 3=CoastSnap | -9 | [cite_start]Distinguishes report source [cite: 36] |
+| **submission_date** | Date of Submission | Date | YYYY-MM-DD | -9 | [cite_start]Date submitted to platform [cite: 36] |
+| **observation_date**| Date of Observation | Date | YYYY-MM-DD | -9 | [cite_start]Sourced from photo EXIF [cite: 36] |
+| **latitude** | Latitude (WGS84) | Continuous | ~41.1°N – 42.0°N | -999 | [cite_start]Auto-populated or manual [cite: 36] |
+| **longitude** | Longitude (WGS84) | Continuous | ~-71.9°E – -71.1°E | -999 | [cite_start]Negative = West [cite: 36] |
+| **city_town** | Municipality | String | RI municipality name | Blank | [cite_start]Derived from coordinates [cite: 36] |
+| **county** | County | Categorical | 1=Providence, 2=Washington, 3=Kent, 4=Newport, 5=Bristol | -9 | [cite_start]RI County [cite: 36] |
+| **coastal_inland** | Coastal/Inland | Categorical | 1=Coastal, 2=Inland, 3=Both | -9 | [cite_start]Proximity to water source [cite: 36] |
+| **tide_height_ft** | Tide Height (ft) | Continuous | Numeric (ft above MLLW) | -9 | [cite_start]Nearest NOAA station data [cite: 36] |
+| **tide_type** | Tidal Classification| Categorical | 1=King Tide, 2=High, 3=Low, 4=Storm Surge, 5=Other | -9 | [cite_start]Thresholds set by RI Sea Grant [cite: 36] |
+| **weather_condition**| Weather Condition | Categorical | 1=Clear, 2=Cloudy, 3=Rain, 4=Heavy Rain, 5=Snow, 6=Fog, 9=Other | -9 | [cite_start]Auto-fetched or reported [cite: 36] |
+| **flooding_observed**| Flooding Observed | Binary | 1=Yes, 0=No | -9 | [cite_start]Presence of water in photo [cite: 36] |
+| **flood_severity** | Flood Severity | Ordinal | 1=Minor, 2=Moderate, 3=Severe, 4=Extreme, 9=Unknown | -9 | [cite_start]Qualitative estimate [cite: 36] |
+| **infrastructure_affected** | Assets Affected | Categorical | 0=None, 1=Road, 2=Parking, 3=Resid., 4=Comm., 5=Park, 6=Utility, 7=Seawall, 8=Other | -9 | [cite_start]Multi-value possible [cite: 36] |
+| **stormtools_linked**| STORMTOOLS Linked | Binary | 1=Yes, 0=No | -9 | [cite_start]Cross-validated with model [cite: 36] |
+
+---
+
+## 4. Missing Data Codes
+
+| Code | Label | Applies To |
+| :--- | :--- | :--- |
+| **-9** | Not recorded / Not available | [cite_start]All numeric and categorical variables [cite: 40] |
+| **-999** | Not recorded (coordinates) | [cite_start]Latitude and Longitude [cite: 40] |
+| **Blank** | Not provided | [cite_start]String and free-text fields [cite: 40] |
+| **0** | No / Not observed | [cite_start]Binary variables (e.g., flooding_observed) [cite: 40] |
+
+---
+
+## 5. Data Notes & Limitations
+
+* **Volunteer Accuracy:** Data quality depends on the submitter and should be treated as observational, not metrological[cite: 43, 44].
+* [cite_start]**Metadata Retrieval:** Tidal and weather data are auto-fetched from the nearest station; mismatches may occur for inland reports[cite: 45, 46].
+* [cite_start]**Qualitative Severity:** The `flood_severity` field is an estimate, not a measured water depth[cite: 47].
+* [cite_start]**CoastSnap:** These reports track shoreline change over time and should be flagged when used in flood-only datasets[cite: 50, 51].
+* **Inland Coverage:** Prior to 2022, reports are predominantly coastal; inland reporting has expanded recently[cite: 52, 53].
+
+---
+
+## 6. Relationship to Other RI Flood Tools
+
+MyCoast RI data complements two other URI-developed tools[cite: 57]:
+
+* **STORMTOOLS:** Provides modeled flood predictions. [cite_start]MyCoast photos serve as "ground truth" to validate these models[cite: 58, 59].
+* **RI-CHAMP:** A decision-support tool for infrastructure damage. [cite_start]MyCoast reports on `infrastructure_affected` provide validation for CHAMP scenarios[cite: 61, 62].
+
+---
+
+## 7. Documentation Reference
+
+[cite_start]Prepared following the **Penn Libraries Data Management Resources** for Codebooks & Data Dictionaries[cite: 66, 67].
+* **Standards Used:** ISO 8601 for dates/times; enumerated missing data codes; versioned for reproducibility[cite: 70, 71, 73].
