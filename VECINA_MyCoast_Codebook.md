@@ -103,29 +103,11 @@ All fields mirror Annotator 1 exactly. Key differences to note:
 - `Training photo? (Y/N)` contains `Y?` entries (4 records) indicating uncertainty.
 - Approximately 40–43 rows are blank.
 
----
-
-## Sheet 2: `Assignments`
-
-**Purpose:** Tracks which rows were assigned to which student groups for annotation.
-
-**Rows:** 10 groups
-
-| Column | Description |
-|---|---|
-| `Group` | Group number (1–10) |
-| `Rows` | Row range in the Tagging sheet assigned to this group (e.g., `3 - 52`) |
-| `People` | Primary annotator name |
-| `Unnamed: 3` | Second annotator name (Annotator 2) |
-| `Unnamed: 4` | Third group member, if any (only Group 1 has three members) |
-
-**Notes:** Row ranges refer to the data rows in the `MyCoast Tagging` sheet (not spreadsheet row numbers). Each group covers 40 reports; Group 1 has three annotators while all others have two.
-
----
+---m
 
 ## Sheet 3: `MyCoast export 2026-02-07`
 
-**Purpose:** The full raw data export from the MyCoast platform, exported February 7, 2026. This is the source data underlying the Tagging sheet.
+**Purpose:** The full raw data export from the MyCoast platform https://mycoast.org/, exported February 7, 2026. This is the source data underlying the Tagging sheet.
 
 **Records:** 410 rows  
 **Columns:** 83  
