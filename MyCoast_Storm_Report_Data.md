@@ -4,7 +4,7 @@
 **Version:** 1.0  
 **Citation:** Penn Libraries Data Management Documentation Standards
 
----
+--- 
 
 ## 1. Dataset Overview
 
