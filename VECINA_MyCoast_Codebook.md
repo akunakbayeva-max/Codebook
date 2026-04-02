@@ -1,5 +1,5 @@
 # Codebook: VECINA Class – MyCoast Data
-**File:** `VECINA_Class_-_MyCoast_Data.xlsx`  
+**File:** https://docs.google.com/spreadsheets/d/161xvt7_7bJ78qqmoTLTctxBfIgdyCqOEI4vCefoD4-o/edit?usp=drive_link 
 **Sheets:** 3 — `MyCoast Tagging`, `Assignments`, `MyCoast export 2026-02-07`
 
 ---
