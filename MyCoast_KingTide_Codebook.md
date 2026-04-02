@@ -1,221 +1,155 @@
-# Codebook: MyCoast King Tide Report Export
-## Dataset Overview
+# MyCoast: MyCoast King Tide Flooding Data Source Codebook
 
-**Dataset Title:** MyCoast: Rhode Island – Citizen-Reported Flooding Observations
-**Source Portal:** [https://mycoast.org/ri](https://mycoast.org/ri) 
-**Geographic Scope:** State of Rhode Island, USA (primary focus: Providence and coastal/riverine communities) 
-**Time:** 2014 (platform launch) – present
-**Data Type:** Crowdsourced observational data (photos + data) 
-**Primary Flood Source Category:** Coastal tidal flooding, storm surge, king tides, and river flooding 
+**Date:** April 2, 2026
+**Version:** 1.0
+**Citation:** Penn Libraries Data Management Documentation Standards
+
+---
+
+## 1. Dataset Overview
+
+**Dataset Title:** MyCoast: Rhode Island – Citizen-Reported King Tide Observations
+**Source File:** `MyCoast_export_2026-03-26__1_.csv`
+**Source Portal:** [https://mycoast.org/ri](https://mycoast.org/ri)
+**Geographic Scope:** Providence, Providence County, Rhode Island, USA
+**Records:** 153 rows | 27 columns
+**Time Range:** Photo dates: 2008-12-12 to 2025-12-06; Records created: 2015-08-28 to 2025-12-06
+**Data Type:** Crowdsourced observational data (photos + automated metadata)
+**Primary Flood Source Category:** Coastal tidal flooding – King Tide events
 
 ### Description
-Developed by the **University of Rhode Island (URI) Coastal Resources Center (CRC)** and **Rhode Island Sea Grant**, this platform allows the public to submit georeferenced photographs of flooding and coastal change. The system automatically appends contextual metadata, such as tidal height from NOAA gauges and local weather data, to each report.
+Developed by the **University of Rhode Island (URI) Coastal Resources Center (CRC)** and **Rhode Island Sea Grant**, this platform allows the public to submit georeferenced photographs of flooding and coastal change. The system automatically appends contextual metadata — including tidal height from nearby NOAA gauges and local weather conditions — to each report. This export contains only **King Tide module** submissions from Providence, RI.
 
-### Reporting Modules
-1.  **King Tides:** Documents extreme high tidal events.
-2.  **Storm Report:** Captures flooding and damage from coastal storms and nor'easters.
-3.  **CoastSnap:** Records shoreline change from fixed camera stations.
+### Reporting Module Captured in This Export
+1. **King Tides:** Documents extreme high tidal events through public photo submissions.
 
----
-**File:** `MyCoast_export_2026-03-26__1_.csv`  
-**Records:** 153 rows  
-**Columns:** 27  
-**Coverage:** All records are King Tide reports from Providence, Providence County, Rhode Island.  
-**Date range:** Photo dates from 2008-12-12 to 2025-12-06; records created in the system from 2015-08-28 to 2025-12-06.
-
----
-## Report Identification
-
-### `ID #`
-- **Type:** Integer
-- **Description:** Unique numeric identifier assigned by MyCoast to each submitted report.
-- **Example:** `227672`
-- **Notes:** No missing values.
-
-### `reportType`
-- **Type:** String (categorical)
-- **Description:** Category of observation submitted.
-- **Values in this dataset:** `King Tide` (all 153 records)
-- **Notes:** This export was filtered to King Tide reports only.
-
-### `report_icon`
-- **Type:** String (categorical)
-- **Description:** Icon file associated with the report type, used for map display on the MyCoast platform.
-- **Values:** `tide.svg` (152), `nuisance.svg` (1)
-
-### `URL`
-- **Type:** String (URL)
-- **Description:** Public permalink to the report on the MyCoast website.
-- **Example:** `https://mycoast.org/reports/227672`
-- **Notes:** No missing values.
-
-### `embed`
-- **Type:** Float
-- **Description:** Appears to be an embed flag or ID. All 153 values are null in this dataset.
+Other MyCoast modules (Storm Report, CoastSnap) are not included in this export.
 
 ---
 
-## Submission Metadata
+## 2. Source & Access Information
 
-### `photo_date`
-- **Type:** String (date, format `YYYY-MM-DD`)
-- **Description:** Date the photo was taken, as reported by the submitter or device.
-- **Range:** 2008-12-12 to 2025-12-06
-- **Notes:** No missing values. Earlier dates (pre-2015) may reflect backdated photo metadata from device EXIF data.
-
-### `photo_time`
-- **Type:** String (12-hour time, format `H:MM am/pm`)
-- **Description:** Time the photo was taken, as reported by the submitter or device.
-- **Example:** `8:37 am`
-- **Notes:** No missing values.
-
-### `report_created`
-- **Type:** String (ISO 8601 datetime, UTC, format `YYYY-MM-DDTHH:MM:SSZ`)
-- **Description:** Timestamp when the report was submitted to and recorded by the MyCoast system.
-- **Range:** 2015-08-28T12:41:24Z to 2025-12-06T13:47:34Z
-- **Notes:** Will differ from `photo_date`/`photo_time` if the photo was taken earlier and submitted later.
-
-### `from_device`
-- **Type:** String (categorical)
-- **Description:** Operating system and version of the device used to submit the report.
-- **Examples:** `iOS 14.8`, `Android 9`, `Android 5.1.1`
-- **Missing:** 19 records (12%)
-- **Notes:** Version strings reflect the OS version at time of submission, not device model.
-
-### `AuthorName`
-- **Type:** Float / String
-- **Description:** Name of the submitting user.
-- **Missing:** All 153 records — entirely redacted in this export, likely for privacy.
-
-### `AuthorEmail`
-- **Type:** Float / String
-- **Description:** Email address of the submitting user.
-- **Missing:** All 153 records — entirely redacted in this export, likely for privacy.
+* **Data Producer:** URI Coastal Resources Center / Rhode Island Sea Grant
+* **Platform Partners:** RI Coastal Resources Management Council (CRMC), RI Department of Transportation (RIDOT), Save the Bay, and Woonasquatucket River Watershed Council (WRWC)
+* **Funding:** Originally via NOAA/Northeast Ocean Council; $200,000 appropriated by RI in FY2026 for continued operations
+* **Access Method:** Public web portal, mobile apps (iOS/Android), and a searchable database
+* **Data License:** Reports are publicly visible; contact URI Sea Grant for large-scale downloads
+* **Citation Format:** MyCoast: Rhode Island [dataset]. University of Rhode Island Coastal Resources Center / Rhode Island Sea Grant. [https://mycoast.org/ri](https://mycoast.org/ri)
 
 ---
 
-## Media
+## 3. Variable Descriptions
 
-### `images`
-- **Type:** String (pipe-delimited list of URLs)
-- **Description:** One or more URLs pointing to photos attached to the report, hosted on DigitalOcean Spaces. Multiple image URLs are separated by `|`.
-- **Example:** `https://report-images.nyc3.digitaloceanspaces.com/.../abc123.jpg|https://...def456.jpg`
-- **Image count per report:** Min 1, max 5, median 1, mean ~1.75
-- **Missing:** 3 records
+All coordinates are in **decimal degrees (WGS84)** and dates/times follow **ISO 8601** standards. Weather and tide metadata are automatically retrieved from external APIs at the time of report submission.
 
----
+### 3.1 Report Identification
 
-## Location
+| Variable Name | Variable Label | Type | Values / Range | Missing Codes | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **ID #** | Report Identifier | Integer | Unique numeric ID (e.g., 227672) | None | Primary key; no missing values |
+| **reportType** | Type of Report | Categorical | `King Tide` (all 153 records) | None | Export filtered to King Tide reports only |
+| **report_icon** | Map Display Icon | Categorical | `tide.svg` (152), `nuisance.svg` (1) | None | Icon file used for map rendering on the MyCoast platform |
+| **URL** | Report Permalink | String (URL) | `https://mycoast.org/reports/{ID}` | None | Public link to the report; no missing values |
+| **embed** | Embed Flag/ID | Float | All null in this dataset | Blank | Can be dropped for all analyses |
 
-### `location_longitude`
-- **Type:** Float (decimal degrees)
-- **Description:** Longitude coordinate of the report location (WGS 84).
-- **Notes:** No missing values. All records fall in the Providence, RI area (approximately −71.4°).
+### 3.2 Submission Metadata
 
-### `location_latitude`
-- **Type:** Float (decimal degrees)
-- **Description:** Latitude coordinate of the report location (WGS 84).
-- **Notes:** No missing values. All records fall in the Providence, RI area (approximately 41.8°).
+| Variable Name | Variable Label | Type | Values / Range | Missing Codes | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **photo_date** | Date of Photo | Date (YYYY-MM-DD) | 2008-12-12 to 2025-12-06 | None | From submitter or device EXIF; pre-2015 dates may be backdated |
+| **photo_time** | Time of Photo | String (H:MM am/pm) | 12-hour format (e.g., `8:37 am`) | None | Sourced from submitter or device |
+| **report_created** | System Submission Timestamp | DateTime (ISO 8601, UTC) | 2015-08-28T12:41:24Z to 2025-12-06T13:47:34Z | None | When report was recorded by MyCoast; may differ from `photo_date` |
+| **from_device** | Submission Device OS | Categorical | iOS or Android + version (e.g., `iOS 14.8`) | Blank (19 records, 12%) | Reflects OS version at submission time, not device model |
+| **AuthorName** | Submitter Name | String | Redacted | Blank (all 153 records) | Fully redacted for privacy; drop for analysis |
+| **AuthorEmail** | Submitter Email | String | Redacted | Blank (all 153 records) | Fully redacted for privacy; drop for analysis |
 
-### `geo_administrative_area_level_1`
-- **Type:** String
-- **Description:** State or top-level administrative area, derived from reverse geocoding the coordinates (Google Maps API levels).
-- **Values in this dataset:** `RI` (all 153 records)
+### 3.3 Media
 
-### `geo_administrative_area_level_2`
-- **Type:** String
-- **Description:** County or second-level administrative area from reverse geocoding.
-- **Values in this dataset:** `Providence County` (all 153 records)
+| Variable Name | Variable Label | Type | Values / Range | Missing Codes | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **images** | Photo URL(s) | String (pipe-delimited URLs) | 1–5 URLs per report (min 1, max 5, median 1, mean ~1.75) | Blank (3 records) | Hosted on DigitalOcean Spaces; multiple URLs separated by `\|` |
 
-### `geo_locality`
-- **Type:** String
-- **Description:** City or town from reverse geocoding.
-- **Values in this dataset:** `Providence` (all 153 records)
+### 3.4 Location
 
-### `geo_neighborhood`
-- **Type:** String
-- **Description:** Neighborhood name from reverse geocoding, when available.
-- **Example:** `Downtown Providence`
-- **Missing:** 7 records — not all locations resolve to a named neighborhood.
+| Variable Name | Variable Label | Type | Values / Range | Missing Codes | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **location_longitude** | Longitude (WGS84) | Continuous | ~−71.4° (Providence, RI area) | -999 | Decimal degrees; no missing values in this export |
+| **location_latitude** | Latitude (WGS84) | Continuous | ~41.8° (Providence, RI area) | -999 | Decimal degrees; no missing values in this export |
+| **geo_administrative_area_level_1** | State | Categorical | `RI` (all records) | None | Derived from reverse geocoding (Google Maps API) |
+| **geo_administrative_area_level_2** | County | Categorical | `Providence County` (all records) | None | Derived from reverse geocoding |
+| **geo_locality** | City / Town | Categorical | `Providence` (all records) | None | Derived from reverse geocoding |
+| **geo_neighborhood** | Neighborhood | String | Named neighborhood (e.g., `Downtown Providence`) | Blank (7 records) | Not all coordinates resolve to a named neighborhood |
+| **geo_route** | Street Name / Route | String | Street name (e.g., `Exchange St`) | Blank (15 records) | Not all coordinates resolve to a named street |
 
-### `geo_route`
-- **Type:** String
-- **Description:** Street name or route from reverse geocoding, when available.
-- **Example:** `Exchange St`
-- **Missing:** 15 records — not all locations resolve to a named street.
+### 3.5 Weather Conditions at Time of Submission
 
----
+Weather data are automatically retrieved from a weather API at submission time, based on the report's coordinates and timestamp.
 
-## Weather Conditions at Time of Submission
+| Variable Name | Variable Label | Type | Values / Range | Missing Codes | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **weather_temperature** | Air Temperature (°F) | Continuous | 29.7 – 86.0 °F (mean: 58.2, median: 58.6) | None | Auto-fetched at submission time |
+| **weather_windSpeed** | Wind Speed (mph) | Continuous | 0.0 – 18.3 mph (mean: 6.9, median: 7.3) | None | Auto-fetched at submission time |
+| **weather_windBearing** | Wind Direction (°) | Integer | 0 – 360° (meteorological convention: direction wind comes *from*; 0/360=N, 90=E, 180=S, 270=W) | None | Auto-fetched at submission time |
+| **weather_calc_24hr_precip** | 24-Hr Precipitation (in) | Continuous | 0.000 – 3.791 in (median: 0.000) | None | Total precipitation in 24 hrs preceding submission; most reports show 0 |
 
-Weather data are automatically retrieved from a weather API at the time the report is submitted, based on the report's coordinates and timestamp.
+### 3.6 Tide Data
 
-### `weather_temperature`
-- **Type:** Float
-- **Unit:** Degrees Fahrenheit
-- **Description:** Ambient air temperature at the report location and time.
-- **Range:** 29.7 – 86.0 °F (mean: 58.2 °F, median: 58.6 °F)
-- **Missing:** None
+Tide data URLs are automatically appended at submission time based on the nearest NOAA tidal gauge. The station ID and date parameters embedded in these URLs can be parsed programmatically to extract gauge ID and observation window.
 
-### `weather_windSpeed`
-- **Type:** Float
-- **Unit:** Miles per hour (mph)
-- **Description:** Wind speed at the report location and time.
-- **Range:** 0.0 – 18.3 mph (mean: 6.9 mph, median: 7.3 mph)
-- **Missing:** None
+| Variable Name | Variable Label | Type | Values / Range | Missing Codes | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **TideDataObserved** | Observed Tide Data URL | String (URL) | NOAA Tides & Currents URL (datum: MLLW, units: feet) | None | Station ID embedded in URL (e.g., `8454000` = Providence, RI); all 153 records have a value |
+| **TideDataPredicted** | Predicted Tide Data URL | String (URL) | NOAA tidal predictions URL for same gauge and date window | None | Pair with `TideDataObserved`; all 153 records have a value |
 
-### `weather_windBearing`
-- **Type:** Integer
-- **Unit:** Degrees (meteorological convention: direction wind is coming *from*, 0/360 = North, 90 = East, 180 = South, 270 = West)
-- **Description:** Wind direction at the report location and time.
-- **Range:** 0 – 360°
-- **Missing:** None
+### 3.7 Narrative Content
 
-### `weather_calc_24hr_precip`
-- **Type:** Float
-- **Unit:** Inches
-- **Description:** Calculated total precipitation in the 24 hours preceding the report submission.
-- **Range:** 0.000 – 3.791 inches (median: 0.000 — most reports recorded no precipitation)
-- **Missing:** None
+| Variable Name | Variable Label | Type | Values / Range | Missing Codes | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **post_comment** | Submitter Comment | String (free text) | Written description of flooding observations | Blank (103 records, 67%) | Only 50 records (33%) include a comment |
+| **MyCoastAI-description** | AI-Generated Photo Description | String (free text) | Automated description of submitted photo(s) | Blank (134 records, 88%) | Feature not widely deployed across this dataset's time range; use with caution |
 
 ---
 
-## Tide Data
+## 4. Missing Data Codes
 
-Tide data URLs are automatically appended at submission time based on the nearest NOAA tidal gauge to the report location.
+| Code | Label | Applies To |
+| :--- | :--- | :--- |
+| **Blank** | Not provided / Not applicable | `AuthorName`, `AuthorEmail`, `embed`, `from_device`, `geo_neighborhood`, `geo_route`, `post_comment`, `MyCoastAI-description`, `images` |
+| **-999** | Not recorded (coordinates) | `location_latitude`, `location_longitude` |
+| **None** | No missing values in this export | All other variables as noted above |
 
-### `TideDataObserved`
-- **Type:** String (URL)
-- **Description:** URL to the NOAA Tides and Currents page showing observed water level data for the gauge nearest to the report, centered on the report date (±1 day window). Datum is MLLW (Mean Lower Low Water); units are standard (feet).
-- **Example:** `https://tidesandcurrents.noaa.gov/waterlevels.html?id=8454000&...`
-- **Notes:** All 153 records have a value. The station ID embedded in the URL (e.g., `8454000` = Providence, RI) can be used to identify the gauge.
-
-### `TideDataPredicted`
-- **Type:** String (URL)
-- **Description:** URL to the NOAA tidal predictions page for the same gauge and date window, showing predicted high/low tide times and heights.
-- **Example:** `https://tidesandcurrents.noaa.gov/noaatidepredictions.html?action=dailychart&id=8454000&...`
-- **Notes:** All 153 records have a value.
+* `AuthorName` and `AuthorEmail` are fully redacted across all 153 records and can be dropped for all analyses.
+* The `embed` column is entirely null and can be dropped.
+* `post_comment` is absent in 67% of records; treat as sparse supplementary text.
+* `MyCoastAI-description` is null in 88% of records; this AI feature was not widely deployed across the dataset's time range.
 
 ---
 
-## Narrative Content
+## 5. Data Notes & Limitations
 
-### `post_comment`
-- **Type:** String (free text)
-- **Description:** Written comment or description provided by the submitter at the time of report.
-- **Example:** `"Water coming up through the drainage grates and between the gap in the granite edging along the river in Waterplace Park"`
-- **Non-null:** 50 records (33%); 103 records (67%) have no comment.
-
-### `MyCoastAI-description`
-- **Type:** String (free text)
-- **Description:** Automated description of the submitted photo(s) generated by MyCoast's AI image analysis system.
-- **Non-null:** 19 records (12%); 134 records (88%) are null, suggesting this feature was not yet widely deployed across this dataset's time range.
+* **Volunteer Accuracy:** Data quality depends on the submitter and should be treated as observational, not metrological. Reports should be validated against other sources before use in predictive models.
+* **Geographic Scope:** This export is geographically uniform — all 153 records are from Providence, Providence County, RI. Geo-level fields and the tide station are therefore consistent across all records.
+* **Temporal Note:** `photo_date` reflects when the photo was taken (EXIF or user input); `report_created` reflects when it was submitted to MyCoast. These differ for some records — use the appropriate field depending on your analysis.
+* **Backdated Records:** Pre-2015 `photo_date` values (earliest: 2008-12-12) reflect photos submitted after the platform launched in 2015, with device EXIF dates preserved.
+* **Tide URLs as Data:** The NOAA station ID and date parameters embedded in `TideDataObserved` / `TideDataPredicted` URLs can be parsed programmatically (e.g., station `8454000` = Providence, RI).
+* **Metadata Auto-Fetch Mismatch:** Weather and tide metadata are fetched at submission time based on coordinates; mismatches may occur if a photo was taken at a different time or place than when/where it was submitted.
+* **King Tide Module Only:** CoastSnap and Storm Report records are excluded from this export. Do not assume this dataset represents all MyCoast RI flooding observations.
 
 ---
 
-## Notes on the Dataset
+## 6. Relationship to Other RI Flood Tools
 
-- **Geographic scope:** This export is entirely within Providence, RI. The geo-level fields and tide station are therefore uniform across all records.
-- **Privacy:** `AuthorName` and `AuthorEmail` are fully redacted; the `embed` column is entirely null. These columns can be dropped for most analyses.
-- **Temporal note:** `photo_date` reflects when the photo was taken (from EXIF or user input); `report_created` reflects when it was submitted to MyCoast. For most records these are the same day, but not always.
-- **Tide URLs as data:** The NOAA station ID and date parameters embedded in `TideDataObserved` / `TideDataPredicted` URLs can be parsed to extract the gauge ID and observation window programmatically.
+MyCoast RI King Tide data complements two other URI-developed tools:
+
+* **STORMTOOLS:** Provides modeled flood predictions. MyCoast King Tide photos serve as "ground truth" to validate these models at extreme high tide conditions.
+* **RI-CHAMP:** A decision-support tool for infrastructure damage. King Tide observations can help validate CHAMP scenarios for nuisance and chronic tidal flooding.
+* **NOAA Tidal Gauges (Station 8454000 – Providence):** All tide data URLs in this export reference this station. Observed and predicted tide data can be fetched directly from NOAA Tides and Currents using the embedded URLs.
+
+Note: Unlike the MyCoast Storm Report export (which spans all RI counties and report types), this King Tide export is scoped to Providence only. Cross-referencing with the Storm Report dataset may provide complementary coverage for broader RI coastal flood analysis.
+
+---
+
+## 7. Documentation Reference
+
+Prepared following the **Penn Libraries Data Management Resources** for Codebooks & Data Dictionaries.
+* **Standards Used:** ISO 8601 for dates/times; enumerated missing data codes; versioned for reproducibility.
