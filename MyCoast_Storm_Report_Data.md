@@ -27,12 +27,12 @@ Developed by the **University of Rhode Island (URI) Coastal Resources Center (CR
 
 ## 2. Source & Access Information
 
-**Data Producer:** URI Coastal Resources Center / Rhode Island Sea Grant 
-**Platform Partners:** RI Coastal Resources Management Council (CRMC), RI Department of Transportation (RIDOT), Save the Bay, and Woonasquatucket River Watershed Council (WRWC)
- **Funding:** Originally via NOAA/Northeast Ocean Council; $200,000 appropriated by RI in FY2026 for continued operations 
-**Access Method:** Public web portal, mobile apps (iOS/Android), and a searchable database 
-**Data License:** Reports are publicly visible; contact URI Sea Grant for large-scale downloads
-**Citation Format:** MyCoast: Rhode Island [dataset]. University of Rhode Island Coastal Resources Center / Rhode Island Sea Grant. [https://mycoast.org/ri](https://mycoast.org/ri). 
+* **Data Producer:** URI Coastal Resources Center / Rhode Island Sea Grant 
+* **Platform Partners:** RI Coastal Resources Management Council (CRMC), RI Department of Transportation (RIDOT), Save the Bay, and Woonasquatucket River Watershed Council (WRWC)
+* **Funding:** Originally via NOAA/Northeast Ocean Council; $200,000 appropriated by RI in FY2026 for continued operations 
+* **Access Method:** Public web portal, mobile apps (iOS/Android), and a searchable database 
+* **Data License:** Reports are publicly visible; contact URI Sea Grant for large-scale downloads
+* **Citation Format:** MyCoast: Rhode Island [dataset]. University of Rhode Island Coastal Resources Center / Rhode Island Sea Grant. [https://mycoast.org/ri](https://mycoast.org/ri). 
 
 ---
 
