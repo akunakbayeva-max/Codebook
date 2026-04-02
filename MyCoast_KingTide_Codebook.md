@@ -1,4 +1,4 @@
-# MyCoast: MyCoast King Tide Flooding Data Source Codebook
+# MyCoast King Tide Flooding Data Source Codebook
 
 **Date:** April 2, 2026
 **Version:** 1.0
