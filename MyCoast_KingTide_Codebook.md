@@ -11,12 +11,19 @@
 ## 1. Dataset Overview
 
 **Dataset Title:** MyCoast: Rhode Island – Citizen-Reported King Tide Observations
+
 **Source File:** `MyCoast_export_2026-03-26__1_.csv`
+
 **Source Portal:** [https://mycoast.org/ri](https://mycoast.org/ri)
+
 **Geographic Scope:** Providence, Providence County, Rhode Island, USA
+
 **Records:** 153 rows | 27 columns
+
 **Time Range:** Photo dates: 2008-12-12 to 2025-12-06; Records created: 2015-08-28 to 2025-12-06
+
 **Data Type:** Crowdsourced observational data (photos + automated metadata)
+
 **Primary Flood Source Category:** Coastal tidal flooding – King Tide events
 
 ### Description
