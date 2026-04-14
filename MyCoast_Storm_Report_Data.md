@@ -9,10 +9,15 @@
 ## 1. Dataset Overview
 
 **Dataset Title:** MyCoast: Rhode Island – Citizen-Reported Flooding Observations
+
 **Source Portal:** [https://mycoast.org/ri](https://mycoast.org/ri) 
+
 **Geographic Scope:** State of Rhode Island, USA (primary focus: Providence and coastal/riverine communities) 
+
 **Time:** 2014 (platform launch) – present
+
 **Data Type:** Crowdsourced observational data (photos + data) 
+
 **Primary Flood Source Category:** Coastal tidal flooding, storm surge, king tides, and river flooding 
 
 ### Description
